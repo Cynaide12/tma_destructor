@@ -1,0 +1,16 @@
+.tap__container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding:20px;
+    transition: transform 200ms;
+}
+
+.tap__img{
+    width:256px
+}
+
+.tap__animate{
+    transform: scale(1.1);
+}

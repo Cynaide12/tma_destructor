@@ -6,6 +6,7 @@ import { Root } from './components/Root.tsx';
 import { init } from './init.ts';
 import "./main.css"
 import '@telegram-apps/telegram-ui/dist/styles.css';
+import { EnvUnsupported } from './components/EnvUnsupported.tsx';
 
 const root = createRoot(document.getElementById('root')!)
 
@@ -18,6 +19,5 @@ try {
     </StrictMode>
   )
 } catch (e) {
-  //TODO::сделать хандлер
-  root.render(<div>ошибка</div>)
+  root.render(<EnvUnsupported/>)
 }

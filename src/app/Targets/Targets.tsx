@@ -10,26 +10,27 @@ interface userData {
 }
 
 export const Targets = () => {
-    const initDataState = useSignal(initData.state)
-    const initDataRows = useMemo<userData[] | undefined>(() => {
-        if (!initDataState || !initDataState.user) {
-            return
-        }
-        const { username, photoUrl } = initDataState.user
+    const initDataState = useSignal(initData.state);
+
+    const initDataRows = useMemo(() => {
+        const user = initDataState?.user;
+        if (!user) return undefined;
+
+        const { username, photoUrl } = user;
         return [
             { title: "username", value: username },
-            { title: 'photourl', value: photoUrl }
-        ]
-    }, [initDataState])
+            { title: "photourl", value: photoUrl }
+        ];
+    }, [initDataState]);
 
     if (!initDataRows) {
         return (
-
-            <Page>
+            <Page back={false}>
                 <Container>
                     <Placeholder
                         header="Упс..."
-                        description="Приложене запустилось без стартовых параметров">
+                        description="Приложене запустилось без стартовых параметров"
+                    >
                         <img
                             alt="Telegram sticker"
                             src="https://xelene.me/telegram.gif"
@@ -38,17 +39,18 @@ export const Targets = () => {
                     </Placeholder>
                 </Container>
             </Page>
-        )
+        );
     }
+
     return (
         <Page>
             <Container>
                 <Section header="Привет">
-                    {initDataRows.map((row) => {
-                        return <Cell key={row.title} headers={row.title} description={row.value} />
-                    })}
+                    {initDataRows.map(({ title, value }) => (
+                        <Cell key={title} headers={title} description={value} />
+                    ))}
                 </Section>
             </Container>
         </Page>
-    )
-}
+    );
+};

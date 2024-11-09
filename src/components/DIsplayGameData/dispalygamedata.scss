@@ -1,0 +1,11 @@
+.display__container{
+    display:flex;
+    justify-content: space-between;
+}
+
+.display__item{
+    padding:15px;
+    box-sizing: border-box;
+    background-color: #212121b9;
+    border-radius: 10px;
+}

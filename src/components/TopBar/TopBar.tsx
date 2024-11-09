@@ -3,6 +3,7 @@ import { Image } from "@telegram-apps/telegram-ui"
 
 import "./topbar.scss"
 import { TonConnectButton } from "@tonconnect/ui-react"
+import { Container } from "../Container/Container"
 
 interface userData {
     title: string
@@ -38,7 +39,7 @@ export const TopBar = () => {
     // }
     const username = initDataState.user.username
     return (
-        <div className="container topbar__container">
+        <Container className="topbar__container">
             <div className="topbar__left">
                 <Image src="/src/assets/avatar.svg" size={28} alt="avatar" className="topbar__avatar" />
                 <span>@{username}</span>
@@ -46,6 +47,6 @@ export const TopBar = () => {
             <div className="topbar_right">
                 <TonConnectButton className="tonconnect_button" />
             </div>
-        </div >
+        </Container>
     )
 }
