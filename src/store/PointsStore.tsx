@@ -33,12 +33,16 @@ class PointsStore {
         this.points = this.points + points;
     }
 
-    get Point() {
+    get GetPoints() {
         return this.points
     }
 
-    get PointOnTap() {
+    get GetPointOnTap() {
         return this.pointOnTap
+    }
+
+    get GetEnergy() {
+        return this.energy
     }
 
 }

@@ -26,7 +26,8 @@ export const Tap: FC = observer(() => {
 
     const TapHandler = () => {
         setIsAnimate(true)
-        PointStore.AddPoint(PointStore.pointOnTap)
+        PointStore.AddPoint(PointStore.GetPointOnTap)
+        // console.log(PointStore.GetPoints)
     }
 
     return (
