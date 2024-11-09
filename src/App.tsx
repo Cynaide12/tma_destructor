@@ -1,35 +1,36 @@
 import { miniApp, useLaunchParams, useSignal } from '@telegram-apps/sdk-react'
 import { AppRoot } from '@telegram-apps/telegram-ui'
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
-import { Targets } from './app/Targets/Targets'
-import { TopBar } from './components/TopBar/TopBar'
-import { BottomBar } from './components/BottomBar/BottomBar'
-import { Home } from './app/Home/Home'
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import { useEffect } from 'react'
 import PointsStore from "./store/PointsStore"
+import { ErrorBoundary } from './components/ErrorBoundary'
+import { routes } from './navigation/routes'
+import { Layout } from './components/Layout/Layout'
 
 function App() {
   const lp = useLaunchParams()
   const isDark = useSignal(miniApp.isDark)
 
   useEffect(() => {
-      PointsStore.fetchData()
+    PointsStore.fetchData()
   }, [])
+
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      errorElement: <ErrorBoundary />,
+      children: [...routes, { path: '*', element: <Navigate to="/" />, title: "Earn" },]
+
+    }
+  ])
 
   return (
     <AppRoot
       appearance={isDark ? "dark" : "light"}
       platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
     >
-      <TopBar />
-      <HashRouter future={{ v7_startTransition: true }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/targets" element={<Targets />} />
-          <Route path='*' element={<Navigate to="/" />} />
-        </Routes>
-      </HashRouter>
-      <BottomBar />
+      <RouterProvider router={router} />
     </AppRoot>
   )
 }

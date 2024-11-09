@@ -1,0 +1,33 @@
+.top__container{
+    display:flex;
+    gap:15px;
+    flex-direction: column;
+}
+
+.top__cardContainer {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(33, 33, 33, 0.7254901961);
+    width:100%;
+    max-height:80px;
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.top__left, .top__right{
+    display:flex;
+    align-items: center;
+    gap:10px
+}
+
+
+.top__avatar{
+    width:32px;
+}
+
+.top__token{
+    width:40px
+}

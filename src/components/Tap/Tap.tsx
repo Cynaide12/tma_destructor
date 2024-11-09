@@ -11,11 +11,6 @@ export const Tap: FC = observer(() => {
 
     const [isAnimate, setIsAnimate] = useState(false)
 
-    // const TapClickHandler = () => {
-    //     PointStore.AddPoint(PointStore.pointOnTap)
-    // }
-
-
     useEffect(() => {
         if (isAnimate) {
             setTimeout(() => {
@@ -27,14 +22,13 @@ export const Tap: FC = observer(() => {
     const TapHandler = () => {
         setIsAnimate(true)
         PointStore.AddPoint(PointStore.GetPointOnTap)
-        // console.log(PointStore.GetPoints)
     }
 
     return (
     <>
 
         <Container onClick={TapHandler} onTouchEnd={TapHandler} className={ClassName("tap__container", (isAnimate ? "tap__animate" : ''))}>
-            <img src="/src/assets/tap-lv1.png" alt="sticker" className="tap__img" />
+            <img src="/src/assets/token.png" alt="sticker" className="tap__img" />
         </Container>
     </>
 )

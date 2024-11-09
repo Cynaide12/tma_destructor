@@ -7,11 +7,9 @@ import { DisplayGameData } from "../../components/DIsplayGameData/DIsplayGameDat
 
 export const Home: FC = () => {
     return (
-        <Page back={false} style={{background: "url('/src/assets/lv1-fon.jpg')"}}>
-            <div>
-                <DisplayGameData />
-                <Tap />
-            </div>
+        <Page back={false} style={{ background: "url('/src/assets/lv1-fon.jpg')" }}>
+            <DisplayGameData />
+            <Tap />
         </Page>
     )
 }
