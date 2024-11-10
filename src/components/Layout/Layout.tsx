@@ -7,10 +7,10 @@ import "./layout.scss"
 
 export const Layout: FC = () => {
     return (
-        <div className="layout">
+        <main className="layout">
             <TopBar />
             <Outlet />
             <BottomBar />
-        </div>
+        </main>
     )
 }

@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom"
 import { Home } from "../app/Home/Home"
 import { Targets } from "../app/Targets/Targets"
 import { TopList } from "../app/TopList/TopList"
@@ -5,11 +6,11 @@ import { TopList } from "../app/TopList/TopList"
 interface Route {
     path: string
     element: JSX.Element
-    title: string
 }
 
 export const routes: Route[] = [
-    { path: '/', element: <Home />, title: "Тапать" },
-    { path: '/targets', element: <Targets />, title: "Задания" },
-    { path: '/top', element: <TopList />, title: "Топ" },
+    { path: '*', element: <Navigate to="/" />},
+    { path: '/tasks', element: <Targets />, },
+    { path: '/', element: <Home />, },
+    { path: '/top', element: <TopList /> },
 ]

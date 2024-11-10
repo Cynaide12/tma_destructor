@@ -1,10 +1,10 @@
-import { Container } from "../Container/Container"
+import { Container } from "../../../../components/Container/Container"
 
 export const TopListCard = (props: { username: string, points: number }) => {
     return (
         <Container className="top__cardContainer">
             <div className="top__left">
-                <img src="/src/assets/avatar.svg" alt="" className="top__avatar" />
+                <svg className="top__avatar" fill="currentColor"><use xlinkHref={"/src/assets/avatar.svg#avatar"} /></svg>
                 <span className="top__username">{props.username}</span>
             </div>
             <div className="top__right">

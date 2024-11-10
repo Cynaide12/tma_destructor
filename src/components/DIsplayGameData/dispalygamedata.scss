@@ -6,6 +6,7 @@
 .display__item{
     padding:15px;
     box-sizing: border-box;
-    background-color: #212121b9;
+    background-color: var(--tgui--surface_primary);
     border-radius: 10px;
+    margin-top:10px
 }

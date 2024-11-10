@@ -1,0 +1,11 @@
+.bottombar  div{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottombar__icon{
+    width: 32px;
+    height: 32px;
+    fill: var(--tgui--text_color);
+}

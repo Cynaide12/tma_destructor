@@ -5,14 +5,15 @@
     box-sizing: border-box;
     padding:20px;
     transition: transform 200ms;
-    cursor: pointer;
     margin-top:1em
 }
 
 .tap__img{
-    width:256px
+    width:256px;
+    cursor: pointer;
+    user-select: none;
 }
 
 .tap__animate{
-    transform: scale(1.1);
+    transform: scale(0.9);
 }

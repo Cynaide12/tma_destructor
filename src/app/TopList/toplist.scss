@@ -7,7 +7,7 @@
 .top__cardContainer {
     padding: 10px;
     border-radius: 10px;
-    background-color: rgba(33, 33, 33, 0.7254901961);
+    background-color: var(--tgui--secondary_hint_color);
     width:100%;
     max-height:80px;
     box-sizing: border-box;

@@ -41,7 +41,7 @@ export const TopBar = () => {
     return (
         <Container className="topbar__container">
             <div className="topbar__left">
-                <Image src="/src/assets/avatar.svg" size={28} alt="avatar" className="topbar__avatar" />
+                <svg className="topbar__avatar" fill="currentColor"><use xlinkHref={"/src/assets/avatar.svg#avatar"} /></svg>
                 <span>@{username}</span>
             </div>
             <div className="topbar_right">

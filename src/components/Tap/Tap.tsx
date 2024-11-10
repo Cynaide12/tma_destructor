@@ -27,8 +27,8 @@ export const Tap: FC = observer(() => {
     return (
     <>
 
-        <Container onClick={TapHandler} onTouchEnd={TapHandler} className={ClassName("tap__container", (isAnimate ? "tap__animate" : ''))}>
-            <img src="/src/assets/token.png" alt="sticker" className="tap__img" />
+        <Container onClick={TapHandler} className={ClassName("tap__container", (isAnimate ? "tap__animate" : ''))}>
+            <img src="/src/assets/token.png" alt="sticker" className="tap__img" draggable="false" />
         </Container>
     </>
 )

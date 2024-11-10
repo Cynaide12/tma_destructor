@@ -1,6 +1,6 @@
 import { miniApp, useLaunchParams, useSignal } from '@telegram-apps/sdk-react'
 import { AppRoot } from '@telegram-apps/telegram-ui'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { useEffect } from 'react'
 import PointsStore from "./store/PointsStore"
 import { ErrorBoundary } from './components/ErrorBoundary'
@@ -20,7 +20,7 @@ function App() {
       path: '/',
       element: <Layout />,
       errorElement: <ErrorBoundary />,
-      children: [...routes, { path: '*', element: <Navigate to="/" />, title: "Earn" },]
+      children: routes
 
     }
   ])
