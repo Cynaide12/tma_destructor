@@ -13,30 +13,6 @@ interface userData {
 export const TopBar = () => {
     const initDataState = useSignal(initData.state)
     if (!initDataState || !initDataState.user) return
-    // const initDataRows = useMemo<userData[] | undefined>(() => {
-    //     if (!initDataState || !initDataState.user) {
-    //         return
-    //     }
-    //     const { username, photoUrl } = initDataState.user
-    //     return [
-    //         { title: "username", value: username },
-    //         { title: 'photourl', value: photoUrl }
-    //     ]
-    // }, [initDataState])
-
-    // if (!initDataRows) {
-    //     return (
-    //         <Placeholder
-    //             topbar="Упс..."
-    //             description="Приложене запустилось без стартовых параметров">
-    //             <img
-    //                 alt="Telegram sticker"
-    //                 src="https://xelene.me/telegram.gif"
-    //                 style={{ display: 'block', width: '144px', height: '144px' }}
-    //             />
-    //         </Placeholder>
-    //     )
-    // }
     const username = initDataState.user.username
     return (
         <Container className="topbar__container">

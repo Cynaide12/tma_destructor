@@ -7,8 +7,6 @@ import "./tap.scss"
 import { ClassName } from "../../helpers/ClassName";
 
 export const Tap: FC = observer(() => {
-
-
     const [isAnimate, setIsAnimate] = useState(false)
 
     useEffect(() => {
@@ -21,15 +19,24 @@ export const Tap: FC = observer(() => {
 
     const TapHandler = () => {
         setIsAnimate(true)
-        PointStore.AddPoint(PointStore.GetPointOnTap)
+        const isOkTap = PointStore.SubEnergy(PointStore.GetEnergy - PointStore.getRandomEnergy(PointStore.maxEnergyOnTap))
+        if (isOkTap) {
+            PointStore.AddPoint(PointStore.GetPointOnTap)
+        }
+
     }
 
     return (
-    <>
+        <>
 
-        <Container onClick={TapHandler} className={ClassName("tap__container", (isAnimate ? "tap__animate" : ''))}>
-            <img src="/src/assets/token.png" alt="sticker" className="tap__img" draggable="false" />
-        </Container>
-    </>
-)
+            <Container
+                onClick={TapHandler}
+                className={ClassName(
+                    "tap__container",
+                    (isAnimate ? "tap__animate" : '')
+                )}>
+                <img src="/src/assets/token.png" alt="sticker" className="tap__img" draggable="false" />
+            </Container>
+        </>
+    )
 })

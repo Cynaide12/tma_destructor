@@ -1,8 +1,6 @@
 import { miniApp, useLaunchParams, useSignal } from '@telegram-apps/sdk-react'
 import { AppRoot } from '@telegram-apps/telegram-ui'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { useEffect } from 'react'
-import PointsStore from "./store/PointsStore"
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { routes } from './navigation/routes'
 import { Layout } from './components/Layout/Layout'
@@ -11,9 +9,6 @@ function App() {
   const lp = useLaunchParams()
   const isDark = useSignal(miniApp.isDark)
 
-  useEffect(() => {
-    PointsStore.fetchData()
-  }, [])
 
   const router = createBrowserRouter([
     {

@@ -1,5 +1,6 @@
 .layout{
     display:flex;
     flex-direction: column;
-    flex-grow: 1;
+    min-width:100dvw;
+    min-height:100dvh
 }
